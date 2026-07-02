@@ -1,0 +1,791 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins', sans-serif;
+
+    background:#f4f7fb;
+
+    color:#333;
+
+    overflow-x:hidden;
+
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 8%;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(10px);
+
+    z-index:1000;
+
+}
+
+header h1{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#FFD43B;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    height:100vh;
+
+    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("img/mundo.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.hero-text{
+
+    max-width:800px;
+
+    color:white;
+
+}
+
+.hero-text h2{
+
+    font-size:60px;
+
+    margin-bottom:25px;
+
+}
+
+.hero-text p{
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    margin-bottom:40px;
+
+}
+
+/* ===========================
+   BOTÃO
+=========================== */
+
+.botao{
+
+    display:inline-block;
+
+    background:#FFD43B;
+
+    color:#222;
+
+    padding:16px 35px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.4s;
+
+}
+
+.botao:hover{
+
+    transform:scale(1.08);
+
+    background:white;
+
+}
+
+/* ===========================
+   TÍTULOS
+=========================== */
+
+.titulo{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:60px;
+
+    color:#222;
+
+}
+
+/* ===========================
+   SEÇÃO DOS CARDS
+=========================== */
+
+#paises{
+
+    padding:120px 8%;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:35px;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card img{
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+}
+
+.card h3{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    font-size:25px;
+
+}
+
+.card p{
+
+    text-align:center;
+
+    padding:15px;
+
+    color:#666;
+
+}
+
+.card a{
+
+    display:block;
+
+    margin:20px auto 30px;
+
+    width:160px;
+
+    text-align:center;
+
+    padding:12px;
+
+    background:#1565C0;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+.card a:hover{
+
+    background:#0D47A1;
+
+}
+
+/* ===========================
+   SEÇÕES DOS PAÍSES
+=========================== */
+
+.pais{
+
+    padding:120px 10%;
+
+    min-height:100vh;
+
+}
+
+.pais h2{
+
+    font-size:45px;
+
+    margin-bottom:30px;
+
+}
+
+.pais h3{
+
+    margin-top:35px;
+
+    margin-bottom:15px;
+
+    font-size:28px;
+
+}
+
+.pais p{
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}
+
+.pais ul{
+
+    margin-left:30px;
+
+    margin-top:15px;
+
+}
+
+.pais li{
+
+    margin:10px 0;
+
+    font-size:18px;
+
+}
+
+/* ===========================
+   ÁREA DOS JOGOS
+=========================== */
+
+.jogo{
+
+    margin-top:50px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+.jogo button{
+
+    margin-top:20px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    background:#1976D2;
+
+    color:white;
+
+    font-size:17px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.jogo button:hover{
+
+    background:#0D47A1;
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+
+footer{
+
+    background:#222;
+
+    color:white;
+
+    text-align:center;
+
+    padding:60px 20px;
+
+}
+
+footer h2{
+
+    margin-bottom:15px;
+
+}
+
+footer p{
+
+    margin-top:10px;
+
+    color:#ddd;
+
+}
+
+/* ===========================
+   ANIMAÇÕES
+=========================== */
+
+.card{
+
+    animation:subir 1s ease;
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+
+@media(max-width:900px){
+
+header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+nav{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.hero-text h2{
+
+    font-size:40px;
+
+}
+
+.hero-text p{
+
+    font-size:18px;
+
+}
+
+.titulo{
+
+    font-size:34px;
+
+}
+
+.pais h2{
+
+    font-size:35px;
+
+}
+
+}
+/* ==========================================
+   TEMAS DOS PAÍSES
+========================================== */
+
+/* ---------- ITÁLIA ---------- */
+
+#italia{
+    background:linear-gradient(135deg,#0b8a44,#ffffff,#d62828);
+    color:#222;
+}
+
+#italia h2{
+    color:#0b8a44;
+    text-shadow:2px 2px 5px rgba(255,255,255,.5);
+}
+
+#italia .jogo{
+    border-left:8px solid #0b8a44;
+}
+
+
+/* ---------- CHINA ---------- */
+
+#china{
+    background:linear-gradient(135deg,#7d0000,#d90429);
+    color:white;
+}
+
+#china h2{
+    color:#FFD700;
+}
+
+#china .jogo{
+    background:rgba(255,255,255,.12);
+    color:white;
+    border-left:8px solid gold;
+}
+
+#china button{
+    background:#FFD700;
+    color:#7d0000;
+}
+
+#china button:hover{
+    background:white;
+}
+
+
+/* ---------- CANADÁ ---------- */
+
+#canada{
+    background:linear-gradient(135deg,#ffffff,#f6f6f6,#d62828);
+}
+
+#canada h2{
+    color:#d62828;
+}
+
+#canada .jogo{
+    border-left:8px solid #d62828;
+}
+
+
+/* ---------- TAILÂNDIA ---------- */
+
+#tailandia{
+    background:linear-gradient(135deg,#0f4c81,#3f88c5,#ffd166);
+}
+
+#tailandia{
+    color:white;
+}
+
+#tailandia h2{
+    color:#ffe66d;
+}
+
+#tailandia .jogo{
+    background:rgba(255,255,255,.15);
+    color:white;
+    border-left:8px solid #ffe66d;
+}
+
+#tailandia button{
+    background:#ffe66d;
+    color:#0f4c81;
+}
+
+#tailandia button:hover{
+    background:white;
+}
+
+
+/* ---------- SUDÃO ---------- */
+
+#sudao{
+    background:linear-gradient(135deg,#000000,#ffffff,#d62828,#0b8a44);
+}
+
+#sudao{
+    color:white;
+}
+
+#sudao h2{
+    color:#ffffff;
+}
+
+#sudao .jogo{
+    background:rgba(255,255,255,.15);
+    color:white;
+    border-left:8px solid #0b8a44;
+}
+
+#sudao button{
+    background:#0b8a44;
+}
+
+#sudao button:hover{
+    background:#08723a;
+}
+
+/* ==========================================
+   EFEITO GLASS
+========================================== */
+
+.pais{
+
+    backdrop-filter:blur(12px);
+
+}
+
+.pais p,
+.pais li{
+
+    font-size:18px;
+
+}
+
+.jogo{
+
+    backdrop-filter:blur(15px);
+
+}
+
+/* ==========================================
+   LISTAS
+========================================== */
+
+.pais ul{
+
+    padding-left:25px;
+
+}
+
+.pais li{
+
+    margin-bottom:12px;
+
+}
+
+/* ==========================================
+   TÍTULOS
+========================================== */
+
+.pais h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    font-size:48px;
+
+}
+
+.pais h3{
+
+    color:inherit;
+
+    margin-top:35px;
+
+}
+
+/* ==========================================
+   IMAGENS (caso adicione depois)
+========================================== */
+
+.pais img{
+
+    width:100%;
+
+    max-width:700px;
+
+    display:block;
+
+    margin:30px auto;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+/* ==========================================
+   ANIMAÇÃO AO PASSAR O MOUSE
+========================================== */
+
+.pais{
+
+    transition:.5s;
+
+}
+
+.pais:hover{
+
+    transform:scale(1.01);
+
+}
+
+/* ==========================================
+   BOTÕES DOS JOGOS
+========================================== */
+
+.jogo button{
+
+    font-weight:bold;
+
+    letter-spacing:.5px;
+
+}
+
+.jogo button:active{
+
+    transform:scale(.95);
+
+}
+
+/* ==========================================
+   SEPARADORES
+========================================== */
+
+.pais h3::after{
+
+    content:"";
+
+    display:block;
+
+    width:80px;
+
+    height:4px;
+
+    margin-top:8px;
+
+    border-radius:5px;
+
+    background:currentColor;
+
+}
+
+/* ==========================================
+   SCROLLBAR PERSONALIZADA
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eeeeee;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#1565C0;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#0D47A1;
+
+}
