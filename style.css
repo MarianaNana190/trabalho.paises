@@ -1,791 +1,1052 @@
-/* ===========================
-   RESET
-=========================== */
+/* ================================= */
+/* RESET */
+/* ================================= */
+
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
-html{
     scroll-behavior:smooth;
 }
 
+
 body{
 
-    font-family:'Poppins', sans-serif;
+    background:#050505;
+    color:white;
 
-    background:#f4f7fb;
-
-    color:#333;
+    font-family:'Poppins',sans-serif;
 
     overflow-x:hidden;
 
 }
 
-/* ===========================
-   MENU
-=========================== */
 
-header{
 
-    position:fixed;
+.background{
 
-    top:0;
+position:fixed;
 
-    width:100%;
+width:100%;
+height:100%;
 
-    display:flex;
+background:
+radial-gradient(circle at top,#222,transparent),
+radial-gradient(circle at bottom,#1a0000,transparent);
 
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:20px 8%;
-
-    background:rgba(0,0,0,.75);
-
-    backdrop-filter:blur(10px);
-
-    z-index:1000;
+z-index:-1;
 
 }
 
-header h1{
 
-    color:white;
 
-    font-size:28px;
 
-    font-weight:700;
+/* ================================= */
+/* MENU */
+/* ================================= */
 
-}
 
-nav{
+.navbar{
 
-    display:flex;
+position:fixed;
 
-    gap:25px;
+top:0;
 
-}
+width:100%;
 
-nav a{
+display:flex;
 
-    color:white;
+justify-content:space-between;
 
-    text-decoration:none;
+align-items:center;
 
-    font-weight:500;
+padding:20px 8%;
 
-    transition:.3s;
+background:rgba(0,0,0,.7);
 
-}
+backdrop-filter:blur(15px);
 
-nav a:hover{
+z-index:1000;
 
-    color:#FFD43B;
+border-bottom:1px solid rgba(255,255,255,.1);
 
 }
 
-/* ===========================
-   HERO
-=========================== */
+
+
+.logo{
+
+font-family:'Cinzel',serif;
+
+font-size:28px;
+
+font-weight:bold;
+
+
+background:linear-gradient(
+90deg,
+#ffd700,
+#fff,
+#ff4444
+);
+
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+}
+
+
+
+.logo i{
+
+color:#ffd700;
+
+}
+
+
+
+.navbar ul{
+
+display:flex;
+
+gap:30px;
+
+list-style:none;
+
+}
+
+
+
+.navbar a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+
+
+.navbar a:hover{
+
+color:#ffd700;
+
+}
+
+
+
+
+
+
+/* ================================= */
+/* HERO */
+/* ================================= */
+
+
 
 .hero{
 
-    height:100vh;
+height:100vh;
 
-    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url("img/mundo.jpg");
+display:flex;
 
-    background-size:cover;
+justify-content:center;
 
-    background-position:center;
+align-items:center;
 
-    display:flex;
+text-align:center;
 
-    align-items:center;
 
-    justify-content:center;
+background:
 
-    text-align:center;
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.9)
+),
 
-    padding:40px;
+url("https://images.unsplash.com/photo-1521295121783-8a321d551ad2");
 
-}
 
-.hero-text{
+background-size:cover;
 
-    max-width:800px;
+background-position:center;
 
-    color:white;
 
 }
+
+
+
 
-.hero-text h2{
+.hero-content{
 
-    font-size:60px;
+max-width:900px;
 
-    margin-bottom:25px;
+animation:entrada 1.5s;
 
 }
 
-.hero-text p{
 
-    font-size:22px;
 
-    line-height:1.7;
+.mini-title{
 
-    margin-bottom:40px;
+letter-spacing:5px;
 
+color:#ddd;
+
 }
+
+
+
+.hero h1{
 
-/* ===========================
-   BOTÃO
-=========================== */
+font-family:'Cinzel',serif;
 
-.botao{
+font-size:100px;
 
-    display:inline-block;
+}
+
 
-    background:#FFD43B;
 
-    color:#222;
+.hero h1 span{
 
-    padding:16px 35px;
 
-    border-radius:40px;
+background:linear-gradient(
+90deg,
+#ffcc00,
+#ff0033
+);
 
-    text-decoration:none;
 
-    font-weight:bold;
+-webkit-background-clip:text;
 
-    transition:.4s;
+color:transparent;
 
+
 }
+
 
-.botao:hover{
 
-    transform:scale(1.08);
+.hero p{
 
-    background:white;
+font-size:20px;
 
+color:#ccc;
+
 }
 
-/* ===========================
-   TÍTULOS
-=========================== */
 
-.titulo{
 
-    text-align:center;
+.btn{
 
-    font-size:42px;
 
-    margin-bottom:60px;
+display:inline-block;
 
-    color:#222;
+margin-top:30px;
 
-}
+padding:15px 40px;
 
-/* ===========================
-   SEÇÃO DOS CARDS
-=========================== */
 
-#paises{
+border-radius:40px;
 
-    padding:120px 8%;
 
-}
+background:
+linear-gradient(
+45deg,
+#b8860b,
+#ffcc00
+);
+
+
+color:black;
 
-.cards{
+font-weight:bold;
 
-    display:grid;
+text-decoration:none;
 
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 
-    gap:35px;
+transition:.4s;
 
+
 }
 
-/* ===========================
-   CARD
-=========================== */
 
-.card{
 
-    background:white;
+.btn:hover{
 
-    border-radius:20px;
 
-    overflow:hidden;
+transform:scale(1.1);
 
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+box-shadow:
+0 0 30px gold;
 
-    transition:.4s;
 
 }
+
+
+
+
+
+/* ================================= */
+/* TITULOS */
+/* ================================= */
+
+
+section h2{
+
+text-align:center;
 
-.card:hover{
+font-family:'Cinzel',serif;
 
-    transform:translateY(-10px);
+font-size:45px;
 
+margin-bottom:30px;
+
+
+background:
+
+linear-gradient(
+90deg,
+#fff,
+#d4af37
+);
+
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+
 }
+
 
-.card img{
 
-    width:100%;
 
-    height:180px;
 
-    object-fit:cover;
+/* ================================= */
+/* SOBRE */
+/* ================================= */
 
+
+
+.sobre{
+
+padding:100px 10%;
+
+text-align:center;
+
 }
+
 
-.card h3{
 
-    text-align:center;
+.sobre p{
 
-    margin-top:20px;
+max-width:900px;
 
-    font-size:25px;
+margin:auto;
 
+color:#bbb;
+
 }
+
 
-.card p{
 
-    text-align:center;
+.features{
 
-    padding:15px;
+display:flex;
 
-    color:#666;
+justify-content:center;
 
+gap:30px;
+
+margin-top:50px;
+
+flex-wrap:wrap;
+
 }
 
-.card a{
 
-    display:block;
 
-    margin:20px auto 30px;
+.feature-card{
 
-    width:160px;
 
-    text-align:center;
+background:rgba(255,255,255,.05);
 
-    padding:12px;
+padding:35px;
 
-    background:#1565C0;
+width:280px;
 
-    color:white;
 
-    text-decoration:none;
+border-radius:25px;
 
-    border-radius:30px;
 
-    transition:.3s;
+box-shadow:
 
-}
+0 0 30px rgba(255,255,255,.05);
 
-.card a:hover{
 
-    background:#0D47A1;
+transition:.4s;
 
+
 }
 
-/* ===========================
-   SEÇÕES DOS PAÍSES
-=========================== */
 
-.pais{
 
-    padding:120px 10%;
+.feature-card:hover{
 
-    min-height:100vh;
 
-}
+transform:translateY(-15px);
 
-.pais h2{
 
-    font-size:45px;
+box-shadow:
 
-    margin-bottom:30px;
+0 0 40px rgba(255,215,0,.3);
 
+
 }
+
+
 
-.pais h3{
+.feature-card i{
 
-    margin-top:35px;
 
-    margin-bottom:15px;
+font-size:40px;
 
-    font-size:28px;
+color:#ffd700;
 
 }
 
-.pais p{
 
-    line-height:1.8;
 
-    font-size:18px;
 
-}
+
+/* ================================= */
+/* PAÍSES */
+/* ================================= */
 
-.pais ul{
 
-    margin-left:30px;
 
-    margin-top:15px;
+.destinos{
 
+padding:100px 8%;
+
 }
+
 
-.pais li{
 
-    margin:10px 0;
+.countries{
 
-    font-size:18px;
 
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:35px;
+
+
 }
+
 
-/* ===========================
-   ÁREA DOS JOGOS
-=========================== */
 
-.jogo{
+.country-card{
 
-    margin-top:50px;
 
-    background:white;
+height:450px;
 
-    padding:35px;
+position:relative;
 
-    border-radius:20px;
+overflow:hidden;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
+border-radius:30px;
 
+
+box-shadow:
+
+0 20px 40px rgba(0,0,0,.7);
+
+
 }
 
-.jogo button{
 
-    margin-top:20px;
 
-    padding:15px 35px;
+.country-card img{
 
-    border:none;
 
-    background:#1976D2;
+width:100%;
 
-    color:white;
+height:100%;
 
-    font-size:17px;
 
-    border-radius:30px;
+object-fit:cover;
 
-    cursor:pointer;
 
-    transition:.3s;
+transition:.8s;
 
+
 }
+
+
+
+
+.country-card:hover img{
 
-.jogo button:hover{
 
-    background:#0D47A1;
+transform:scale(1.15);
 
-    transform:scale(1.05);
 
 }
 
-/* ===========================
-   RODAPÉ
-=========================== */
 
-footer{
 
-    background:#222;
 
-    color:white;
+.overlay{
 
-    text-align:center;
 
-    padding:60px 20px;
+position:absolute;
 
+inset:0;
+
+
+background:
+
+linear-gradient(
+transparent,
+rgba(0,0,0,.9)
+);
+
+
 }
+
+
+
+.country-text{
 
-footer h2{
 
-    margin-bottom:15px;
+position:absolute;
 
+bottom:35px;
+
+left:30px;
+
+right:30px;
+
+
 }
 
-footer p{
 
-    margin-top:10px;
 
-    color:#ddd;
+.country-text h3{
 
+
+font-family:'Cinzel',serif;
+
+font-size:35px;
+
+
 }
+
 
-/* ===========================
-   ANIMAÇÕES
-=========================== */
 
-.card{
+.country-text p{
 
-    animation:subir 1s ease;
 
+color:#ddd;
+
+
 }
 
-@keyframes subir{
 
-    from{
 
-        opacity:0;
+.country-text a{
 
-        transform:translateY(50px);
 
-    }
+display:inline-block;
 
-    to{
+margin-top:15px;
 
-        opacity:1;
+color:#ffd700;
 
-        transform:translateY(0);
+text-decoration:none;
 
-    }
+font-weight:bold;
 
+
 }
 
-/* ===========================
-   RESPONSIVO
-=========================== */
 
-@media(max-width:900px){
 
-header{
 
-    flex-direction:column;
 
-    gap:20px;
 
-}
 
-nav{
 
-    flex-wrap:wrap;
+/* ================================= */
+/* PÁGINAS DOS PAÍSES */
+/* ================================= */
 
-    justify-content:center;
 
-}
+
+.country-section{
 
-.hero-text h2{
 
-    font-size:40px;
+padding-top:100px;
 
 }
 
-.hero-text p{
 
-    font-size:18px;
 
-}
+.country-banner{
 
-.titulo{
 
-    font-size:34px;
+height:80vh;
 
-}
+position:relative;
 
-.pais h2{
+overflow:hidden;
 
-    font-size:35px;
 
 }
 
-}
-/* ==========================================
-   TEMAS DOS PAÍSES
-========================================== */
 
-/* ---------- ITÁLIA ---------- */
 
-#italia{
-    background:linear-gradient(135deg,#0b8a44,#ffffff,#d62828);
-    color:#222;
-}
+.country-banner img{
 
-#italia h2{
-    color:#0b8a44;
-    text-shadow:2px 2px 5px rgba(255,255,255,.5);
-}
 
-#italia .jogo{
-    border-left:8px solid #0b8a44;
-}
+width:100%;
 
+height:100%;
 
-/* ---------- CHINA ---------- */
+object-fit:cover;
 
-#china{
-    background:linear-gradient(135deg,#7d0000,#d90429);
-    color:white;
-}
 
-#china h2{
-    color:#FFD700;
 }
 
-#china .jogo{
-    background:rgba(255,255,255,.12);
-    color:white;
-    border-left:8px solid gold;
-}
 
-#china button{
-    background:#FFD700;
-    color:#7d0000;
-}
 
-#china button:hover{
-    background:white;
-}
 
+.country-banner::after{
 
-/* ---------- CANADÁ ---------- */
 
-#canada{
-    background:linear-gradient(135deg,#ffffff,#f6f6f6,#d62828);
-}
+content:"";
 
-#canada h2{
-    color:#d62828;
-}
+position:absolute;
 
-#canada .jogo{
-    border-left:8px solid #d62828;
-}
+inset:0;
 
 
-/* ---------- TAILÂNDIA ---------- */
+background:
 
-#tailandia{
-    background:linear-gradient(135deg,#0f4c81,#3f88c5,#ffd166);
-}
+linear-gradient(
+black,
+transparent,
+black
+);
 
-#tailandia{
-    color:white;
-}
 
-#tailandia h2{
-    color:#ffe66d;
 }
 
-#tailandia .jogo{
-    background:rgba(255,255,255,.15);
-    color:white;
-    border-left:8px solid #ffe66d;
-}
+
+
+
+.banner-content{
+
 
-#tailandia button{
-    background:#ffe66d;
-    color:#0f4c81;
+position:absolute;
+
+z-index:2;
+
+bottom:100px;
+
+left:10%;
+
+
 }
+
+
+
+.banner-content h2{
+
 
-#tailandia button:hover{
-    background:white;
+font-size:90px;
+
+margin:10px 0;
+
+
 }
+
 
 
-/* ---------- SUDÃO ---------- */
+.banner-content span{
 
-#sudao{
-    background:linear-gradient(135deg,#000000,#ffffff,#d62828,#0b8a44);
+
+color:#ffd700;
+
+letter-spacing:4px;
+
+
 }
+
+
+
+
+/* FILTROS DOS PAÍSES */
+
+
+
+.china-filter{
+
+
+position:absolute;
+
+inset:0;
 
-#sudao{
-    color:white;
+background:rgba(150,0,0,.45);
+
+
 }
+
+
+
+
+
+.japan-filter{
+
+position:absolute;
 
-#sudao h2{
-    color:#ffffff;
+inset:0;
+
+background:rgba(255,80,130,.25);
+
 }
+
+
+
+
+.cabo-filter{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,120,255,.25);
 
-#sudao .jogo{
-    background:rgba(255,255,255,.15);
-    color:white;
-    border-left:8px solid #0b8a44;
 }
 
-#sudao button{
-    background:#0b8a44;
+
+
+.italy-filter{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(180,80,0,.25);
+
 }
+
+
+
 
-#sudao button:hover{
-    background:#08723a;
+.thailand-filter{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(255,200,0,.25);
+
 }
+
+
+
+
+
 
-/* ==========================================
-   EFEITO GLASS
-========================================== */
+/* ================================= */
+/* INFORMAÇÕES */
+/* ================================= */
 
-.pais{
 
-    backdrop-filter:blur(12px);
 
+.country-info{
+
+padding:80px 10%;
+
+text-align:center;
+
 }
+
+
+
+.country-info p{
+
+
+color:#bbb;
 
-.pais p,
-.pais li{
+line-height:1.8;
 
-    font-size:18px;
 
 }
 
-.jogo{
 
-    backdrop-filter:blur(15px);
 
+.info-grid{
+
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+margin-top:50px;
+
+flex-wrap:wrap;
+
+
 }
+
 
-/* ==========================================
-   LISTAS
-========================================== */
 
-.pais ul{
+.info-box{
 
-    padding-left:25px;
 
+background:#111;
+
+padding:30px;
+
+width:300px;
+
+
+border-radius:25px;
+
+
+box-shadow:
+
+0 0 30px rgba(255,255,255,.05);
+
+
 }
 
-.pais li{
 
-    margin-bottom:12px;
 
+.info-box i{
+
+
+font-size:35px;
+
+color:#ffd700;
+
+
 }
+
+
+
+
 
-/* ==========================================
-   TÍTULOS
-========================================== */
 
-.pais h2{
 
-    text-align:center;
 
-    margin-bottom:40px;
+/* ================================= */
+/* CARROSSEL */
+/* ================================= */
 
-    font-size:48px;
 
+
+.monuments{
+
+padding:80px 8%;
+
+
 }
+
+
+
+.carousel{
+
 
-.pais h3{
+display:flex;
 
-    color:inherit;
+gap:30px;
 
-    margin-top:35px;
+overflow-x:auto;
 
+
+scroll-behavior:smooth;
+
+
 }
+
 
-/* ==========================================
-   IMAGENS (caso adicione depois)
-========================================== */
 
-.pais img{
+.monument-card{
 
-    width:100%;
 
-    max-width:700px;
+min-width:330px;
 
-    display:block;
 
-    margin:30px auto;
+background:#111;
 
-    border-radius:20px;
+border-radius:25px;
 
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
+overflow:hidden;
 
+
+box-shadow:
+
+0 0 30px rgba(255,255,255,.08);
+
+
 }
+
 
-/* ==========================================
-   ANIMAÇÃO AO PASSAR O MOUSE
-========================================== */
 
-.pais{
+.monument-card img{
 
-    transition:.5s;
 
+width:100%;
+
+height:250px;
+
+object-fit:cover;
+
+
 }
 
-.pais:hover{
 
-    transform:scale(1.01);
 
+.monument-card h3,
+.monument-card p{
+
+
+padding:15px;
+
+
 }
 
-/* ==========================================
-   BOTÕES DOS JOGOS
-========================================== */
 
-.jogo button{
 
-    font-weight:bold;
+.monument-card p{
 
-    letter-spacing:.5px;
+color:#bbb;
 
 }
+
+
+
+
+
+/* ================================= */
+/* QUIZ */
+/* ================================= */
+
+
+
+.quiz-section{
+
+
+padding:80px 10%;
 
-.jogo button:active{
+text-align:center;
 
-    transform:scale(.95);
 
 }
 
-/* ==========================================
-   SEPARADORES
-========================================== */
 
-.pais h3::after{
 
-    content:"";
+.quiz-box{
 
-    display:block;
 
-    width:80px;
+background:#111;
 
-    height:4px;
+padding:40px;
 
-    margin-top:8px;
+border-radius:30px;
 
-    border-radius:5px;
 
-    background:currentColor;
+max-width:700px;
 
+margin:auto;
+
+
 }
+
+
+
+.quiz-box button{
+
+
+display:block;
+
+width:100%;
+
+padding:15px;
 
-/* ==========================================
-   SCROLLBAR PERSONALIZADA
-========================================== */
+margin:15px 0;
 
-::-webkit-scrollbar{
 
-    width:12px;
+background:#222;
 
+border:1px solid #444;
+
+color:white;
+
+border-radius:15px;
+
+
+cursor:pointer;
+
+
+transition:.3s;
+
+
 }
+
 
-::-webkit-scrollbar-track{
 
-    background:#eeeeee;
+.quiz-box button:hover{
 
+
+background:#ffd700;
+
+color:black;
+
+
 }
+
+
+
+
+
+/* ANIMAÇÃO */
 
-::-webkit-scrollbar-thumb{
 
-    background:#1565C0;
 
-    border-radius:20px;
+@keyframes entrada{
 
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
 }
 
-::-webkit-scrollbar-thumb:hover{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
-    background:#0D47A1;
 
 }
