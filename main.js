@@ -1,249 +1,322 @@
-// ==========================================
-// BEM-VINDO
-// ==========================================
+const elementos = document.querySelectorAll(
+".country-section, .feature-card, .country-card, .monument-card"
+);
 
-window.addEventListener("load", () => {
-    alert("🌎 Bem-vindo ao Conhecendo o Mundo!\n\nExplore os países e divirta-se com os jogos educativos!");
-});
 
-// ==========================================
-// ITÁLIA - MONTE A PIZZA
-// ==========================================
 
-const pizzaBtn = document.getElementById("pizzaBtn");
+elementos.forEach(el=>{
 
-pizzaBtn.addEventListener("click", () => {
+el.style.opacity="0";
 
-    let pontos = 0;
+el.style.transform="translateY(40px)";
 
-    let molho = prompt("Qual molho vai na pizza?\n\n1 - Tomate\n2 - Chocolate");
-
-    if(molho === "1"){
-        pontos++;
-    }
-
-    let queijo = prompt("Qual queijo escolher?\n\n1 - Mussarela\n2 - Cheddar");
-
-    if(queijo === "1"){
-        pontos++;
-    }
-
-    let manjericao = prompt("Adicionar manjericão?\n\n1 - Sim\n2 - Não");
-
-    if(manjericao === "1"){
-        pontos++;
-    }
-
-    if(pontos == 3){
-
-        alert("🍕 Parabéns!\nVocê montou uma verdadeira pizza italiana!");
-
-    }
-
-    else{
-
-        alert("Sua pizza ficou diferente da tradicional italiana.\nPontuação: " + pontos + "/3");
-
-    }
+el.style.transition="1s";
 
 });
 
-// ==========================================
-// CHINA - QUIZ
-// ==========================================
 
-const chinaBtn = document.getElementById("chinaBtn");
 
-chinaBtn.addEventListener("click", () => {
+function animar(){
 
-    let score = 0;
+elementos.forEach(el=>{
 
-    let r1 = prompt("Qual é a capital da China?\n\nA) Pequim\nB) Xangai");
 
-    if(r1.toUpperCase() == "A"){
-        score++;
-    }
+let topo = el.getBoundingClientRect().top;
 
-    let r2 = prompt("A Grande Muralha fica em qual país?\n\nA) Japão\nB) China");
 
-    if(r2.toUpperCase() == "B"){
-        score++;
-    }
+if(topo < window.innerHeight - 100){
 
-    let r3 = prompt("O panda é um símbolo da China?\n\nA) Sim\nB) Não");
+el.style.opacity="1";
 
-    if(r3.toUpperCase() == "A"){
-        score++;
-    }
+el.style.transform="translateY(0)";
 
-    alert("🐉 Você acertou " + score + " de 3 perguntas!");
+}
+
 
 });
 
-// ==========================================
-// CANADÁ
-// ==========================================
 
-const canadaBtn = document.getElementById("canadaBtn");
+}
 
-canadaBtn.addEventListener("click", () => {
 
-    let pontos = 0;
+window.addEventListener(
+"scroll",
+animar
+);
 
-    let r1 = confirm("O Canadá possui a maior costa marítima do mundo?");
 
-    if(r1){
-        pontos++;
-    }
+animar();
 
-    let r2 = confirm("A capital do Canadá é Toronto?");
 
-    if(!r2){
-        pontos++;
-    }
 
-    let r3 = confirm("A folha de bordo é um símbolo do Canadá?");
 
-    if(r3){
-        pontos++;
-    }
 
-    alert("🍁 Você fez " + pontos + " de 3 pontos!");
 
-});
 
-// ==========================================
-// TAILÂNDIA
-// ==========================================
+// ===============================
+// QUIZ FUNCIONANDO
+// ===============================
 
-const thaiBtn = document.getElementById("thaiBtn");
 
-thaiBtn.addEventListener("click", () => {
 
-    let resposta = prompt(
+const quizzes = {
 
-`Qual destes animais é considerado um símbolo da Tailândia?
 
-1 - Elefante
+china:{
+resposta:"Grande Muralha da China",
+pontos:0
+},
 
-2 - Girafa
 
-3 - Pinguim`
+japao:{
+resposta:"Monte Fuji",
+pontos:0
+},
 
-    );
 
-    if(resposta == "1"){
+caboverde:{
+resposta:"Oceano Atlântico",
+pontos:0
+},
 
-        alert("🐘 Correto!");
 
-    }
+italia:{
+resposta:"Roma",
+pontos:0
+},
 
-    else{
 
-        alert("Resposta incorreta.\nO elefante é um importante símbolo da Tailândia.");
+tailandia:{
+resposta:"Bangkok",
+pontos:0
+}
 
-    }
-
-});
-
-// ==========================================
-// SUDÃO
-// ==========================================
-
-const sudaoBtn = document.getElementById("sudaoBtn");
-
-sudaoBtn.addEventListener("click", () => {
-
-    let score = 0;
-
-    let r1 = prompt("Qual rio passa pelo Sudão?\n\nA) Amazonas\nB) Nilo");
-
-    if(r1.toUpperCase() == "B"){
-        score++;
-    }
-
-    let r2 = prompt("O Sudão fica em qual continente?\n\nA) África\nB) Europa");
-
-    if(r2.toUpperCase() == "A"){
-        score++;
-    }
-
-    alert("🧩 Você acertou " + score + " de 2 perguntas!");
-
-});
-
-// ==========================================
-// ANIMAÇÃO DOS CARDS
-// ==========================================
-
-const cards = document.querySelectorAll(".card");
-
-cards.forEach(card => {
-
-    card.addEventListener("mouseenter", () => {
-
-        card.style.transform = "translateY(-15px) scale(1.04)";
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.transform = "translateY(0px) scale(1)";
-
-    });
-
-});
-
-// ==========================================
-// BOTÃO VOLTAR AO TOPO
-// ==========================================
-
-const voltar = document.createElement("button");
-
-voltar.innerHTML = "⬆";
-
-voltar.id = "voltarTopo";
-
-document.body.appendChild(voltar);
-
-voltar.style.position = "fixed";
-voltar.style.right = "20px";
-voltar.style.bottom = "20px";
-voltar.style.width = "60px";
-voltar.style.height = "60px";
-voltar.style.border = "none";
-voltar.style.borderRadius = "50%";
-voltar.style.background = "#1565C0";
-voltar.style.color = "white";
-voltar.style.fontSize = "25px";
-voltar.style.cursor = "pointer";
-voltar.style.display = "none";
-voltar.style.boxShadow = "0 8px 20px rgba(0,0,0,.3)";
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY > 400){
-
-        voltar.style.display = "block";
-
-    }
-
-    else{
-
-        voltar.style.display = "none";
-
-    }
-
-});
-
-voltar.onclick = ()=>{
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
 
 };
+
+
+
+
+
+Object.keys(quizzes).forEach(pais=>{
+
+
+const botoes = document.querySelectorAll(
+`.answers-${pais} button`
+);
+
+
+
+botoes.forEach(botao=>{
+
+
+botao.addEventListener(
+"click",
+function(){
+
+
+
+// impede nova resposta
+
+if(this.dataset.respondido){
+
+return;
+
+}
+
+
+
+botoes.forEach(btn=>{
+
+btn.dataset.respondido=true;
+
+});
+
+
+
+
+
+let resposta =
+this.innerText.trim();
+
+
+
+
+
+if(resposta === quizzes[pais].resposta){
+
+
+
+this.style.background="#16a34a";
+
+this.style.color="white";
+
+
+quizzes[pais].pontos++;
+
+
+
+}
+
+else{
+
+
+this.style.background="#dc2626";
+
+this.style.color="white";
+
+
+}
+
+
+
+
+
+
+const resultado =
+document.querySelector(
+`#score-${pais}`
+);
+
+
+
+if(resultado){
+
+
+resultado.innerHTML =
+`Pontuação: ${quizzes[pais].pontos}/1`;
+
+}
+
+
+
+}
+
+);
+
+
+
+});
+
+
+});
+
+
+
+
+
+
+
+
+
+// ===============================
+// CARROSSEL AUTOMÁTICO
+// ===============================
+
+
+
+document.querySelectorAll(".carousel")
+.forEach(carrossel=>{
+
+
+let posicao=0;
+
+
+setInterval(()=>{
+
+
+posicao += 330;
+
+
+
+if(posicao >= carrossel.scrollWidth){
+
+posicao=0;
+
+}
+
+
+
+carrossel.scrollTo({
+
+left:posicao,
+
+behavior:"smooth"
+
+});
+
+
+},3500);
+
+
+
+});
+
+
+
+
+
+
+
+
+// ===============================
+// CORRIGIR IMAGENS QUEBRADAS
+// ===============================
+
+
+
+document.querySelectorAll("img")
+.forEach(img=>{
+
+
+img.onerror=function(){
+
+
+this.src =
+"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/640px-No-Image-Placeholder.svg.png";
+
+
+};
+
+
+});
+
+
+// ===============================
+// MENU SUAVE
+// ===============================
+
+
+document.querySelectorAll(
+'a[href^="#"]'
+)
+.forEach(link=>{
+
+
+link.onclick=function(e){
+
+
+let destino =
+document.querySelector(
+this.getAttribute("href")
+);
+
+
+if(destino){
+
+e.preventDefault();
+
+
+destino.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+
+
+};
+
+
+});
